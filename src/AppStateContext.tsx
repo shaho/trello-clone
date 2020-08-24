@@ -42,3 +42,11 @@ interface AppStateContextProps {
 const AppStateContext = createContext<AppStateContextProps>(
   {} as AppStateContextProps
 );
+
+export const AppStateProvider = ({ children }: React.PropsWithChildren<{}>) => {
+  return (
+    <AppStateContext.Provider value={{ state: appData }}>
+      {children}
+    </AppStateContext.Provider>
+  );
+};
